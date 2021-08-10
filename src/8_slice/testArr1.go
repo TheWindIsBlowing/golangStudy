@@ -26,6 +26,10 @@ func main() {
 	// 声明slice3为一个切片：使用 := 推导出slice3是一个切片，为其开辟6个空间，初始化全都为0 
 	slice3 := make([]int, 6)
 	fmt.Println(slice3)
+
+	example()
+
+	example2()
 }
 
 // 严格匹配 [4]int 类型
@@ -40,4 +44,40 @@ func foreachSliceFunc(arr []string) {
 	for i := 0; i < len(arr); i++ {
 		fmt.Println(arr[i]);
 	}
+}
+
+func example()  {
+	fmt.Println("========================")
+	s := []int{2, 3, 5, 7, 11, 13}
+
+	s = s[1:4]
+	fmt.Println(s)
+
+	s = s[:2]
+	fmt.Println(s)
+
+	s = s[1:]
+	fmt.Println(s)
+}
+
+func example2()  {
+	fmt.Println("=========================")
+	s := []int{2, 3, 5, 7, 11, 13, 15}
+	printSlice(s)
+
+	// 截取切片使其长度为 0
+	s = s[:0]
+	printSlice(s)
+
+	// 拓展其长度
+	s = s[:4]
+	printSlice(s)
+
+	// 舍弃前两个值
+	s = s[2:]
+	printSlice(s)
+}
+
+func printSlice(s []int) {
+	fmt.Printf("len=%d cap=%d %v\n", len(s), cap(s), s)
 }
