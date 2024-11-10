@@ -38,6 +38,7 @@ type Person struct {
 	name string
 }
 
+// 值接收者
 func (p Person) print() {
 	fmt.Println("person: ", p.name)
 }
@@ -46,6 +47,7 @@ type Student struct {
 	name string
 }
 
+// 指针接收者
 func (s *Student) print() {
 	fmt.Println("student: ", s.name)
 }
@@ -53,8 +55,8 @@ func (s *Student) print() {
 func TestDefer3(t *testing.T) {
 	p1 := Person{name: "foo"}
 	s1 := Student{name: "foo"}
-	defer p1.print()
-	defer s1.print()
+	defer p1.print() // 调用时已经获得一个Person的拷贝，name也已经固定
+	defer s1.print() // 调用时已经获得一个Student的指针的拷贝，
 	p1.name = "bar"
 	s1.name = "bar"
 }
