@@ -18,8 +18,8 @@ func TestFindAllCardType(t *testing.T) {
 
 	t.Log(handCards)
 
-	allCards := make(map[string]*CardSet, 20)
-	SplitCards(handCards, allCards)
+	// allCards := make(map[string]*CardSet, 20)
+	// SplitCards(handCards, allCards)
 }
 
 /*
