@@ -21,4 +21,7 @@ func main() {
 		a1 = append(a1, fmt.Sprintf("%v", i))
 	}
 	fmt.Println(a1)
+
+	var arr [4]int
+	fmt.Println(arr[3])
 }
