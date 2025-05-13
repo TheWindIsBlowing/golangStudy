@@ -5,6 +5,7 @@ import (
 	"time"
 )
 
+// 时间
 func f1() {
 	p := fmt.Println
 
@@ -42,6 +43,7 @@ func f1() {
 	p(then.Add(-diff))
 }
 
+// 时间戳
 func f2() {
 	now := time.Now()
 	nanos := now.UnixNano()
